@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {Rating} from './Rating';
 import {Accordion} from './Accordion';
+import {AppTitle} from './AppTitle';
 
 function App() {
+    console.log('App rendering');
     return (
         <div>
-            This is App component
+            <AppTitle/>
             <Rating/>
             <Accordion/>
         </div>

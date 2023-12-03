@@ -1,14 +1,13 @@
 import React from 'react';
+import {AccordionTitle} from './AccordionTitle';
+import {AccordionMenu} from './AccordionMenu';
 
 export function Accordion() {
+    console.log('Accordion rendering');
     return (
         <div>
-            <h3>Menu</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+            <AccordionTitle/>
+            <AccordionMenu/>
         </div>
     );
 }
