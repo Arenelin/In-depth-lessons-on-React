@@ -1,16 +1,20 @@
 import React from 'react';
 import './App.css';
-import {Rating} from './Rating';
-import {Accordion} from './Accordion';
-import {AppTitle} from './AppTitle';
+import {Rating} from './components/Rating/Rating';
+import {Accordion} from './components/Accordion/Accordion';
+import {PageTitle} from './PageTitle';
 
 function App() {
     console.log('App rendering');
     return (
         <div>
-            <AppTitle/>
-            <Rating/>
-            <Accordion/>
+            <PageTitle title="This is App component"/>
+            Article 1
+            <Rating value={1}/>
+            <Accordion title="Menu"/>
+            Article 2
+            <Rating value={4}/>
+            <Accordion title="What to learn"/>
         </div>
     );
 }
