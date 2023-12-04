@@ -3,16 +3,20 @@ import {AccordionTitle} from './AccordionTitle';
 import {AccordionMenu} from './AccordionMenu';
 
 type AccordionPropsType = {
-    title: string,
+    titleValue: string,
+    collapsed: boolean,
 }
 
 export function Accordion(props: AccordionPropsType) {
-    console.log('Accordion rendering');
+    if (props.collapsed) {
+        return (
+            <AccordionTitle title={props.titleValue}/>
+        );
+    }
     return (
         <div>
-            <AccordionTitle title={props.title}/>
+            <AccordionTitle title={props.titleValue}/>
             <AccordionMenu/>
         </div>
     );
 }
-

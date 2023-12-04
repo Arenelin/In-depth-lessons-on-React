@@ -5,7 +5,6 @@ type PageTitlePropsType = {
 }
 
 export function PageTitle(props: PageTitlePropsType) {
-    console.log('AppTitle rendering');
     return <h1>{props.title}</h1>;
 }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 
 export function AccordionMenu() {
-    console.log('AccordionMenu rendering');
     return (
         <ul>
             <li>1</li>
