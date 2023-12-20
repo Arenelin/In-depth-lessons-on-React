@@ -1,15 +1,16 @@
 import React from 'react';
 
 type StarPropsType = {
-    selected: boolean,
+    selected: boolean
+    callback: () => void
+
 }
 
 export function Star(props: StarPropsType) {
-    if (props.selected) {
-        return <span><b>Star</b> </span>
-    }
-    return (
-        <span>Star </span>
-    );
-}
 
+    return (
+        props.selected
+            ? <span onClick={() => props.callback()}><b>Star</b> </span>
+            : <span onClick={() => props.callback()}>Star </span>
+    )
+}

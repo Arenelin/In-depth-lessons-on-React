@@ -7,12 +7,11 @@ type UncontrolledAccordionPropsType = {
 }
 
 export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
-    const [collapsed, setCollapsed] = useState(true);
+    const [collapsed, setCollapsed] = useState(false);
     return (
         <div>
-            <AccordionTitle title={props.titleValue}/>
+            <AccordionTitle callback={() => setCollapsed(!collapsed)} title={props.titleValue}/>
             {!collapsed && <AccordionMenu/>}
-            <button onClick={() => setCollapsed((prevState) => !prevState)}>Toggle</button>
         </div>
     );
 }
