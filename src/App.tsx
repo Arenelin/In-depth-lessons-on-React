@@ -9,7 +9,7 @@ function App() {
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
-    const [on, setOn] = useState<boolean>(false);
+    const [switchOn, setSwitchOn] = useState<boolean>(false);
 
     return (
         <div className={'App'}>
@@ -28,8 +28,8 @@ function App() {
 
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <OnOff on={on} onClick={setOn}/>
-            <UncontrolledOnOff/>
+            <OnOff on={switchOn} onClick={setSwitchOn}/>
+            <UncontrolledOnOff onChange={setSwitchOn}/>{switchOn.toString()}
 
         </div>
     );
