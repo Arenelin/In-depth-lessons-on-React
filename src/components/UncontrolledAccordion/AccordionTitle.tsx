@@ -6,6 +6,9 @@ type AccordionTitlePropsType = {
 }
 
 export function AccordionTitle(props: AccordionTitlePropsType) {
-    return <h3 onClick={() => props.callback()}>{props.title}</h3>;
-}
+    const onClickHandler = () => {
+        props.callback()
+    }
 
+    return <h3 onClick={onClickHandler}>{props.title}</h3>;
+}

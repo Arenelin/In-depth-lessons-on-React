@@ -5,12 +5,13 @@ import {AccordionMenu} from './AccordionMenu';
 type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
+    onClick: (accordionCollapsed: boolean) => void
 }
 
 export function Accordion(props: AccordionPropsType) {
     return (
         <div>
-            <AccordionTitle title={props.titleValue}/>
+            <AccordionTitle onClick={() => props.onClick(!props.collapsed)} title={props.titleValue}/>
             {!props.collapsed && <AccordionMenu/>}
         </div>
     );

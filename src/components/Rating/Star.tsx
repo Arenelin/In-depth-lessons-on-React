@@ -1,15 +1,18 @@
 import React from 'react';
+import {RatingValueType} from './Rating';
 
 type StarPropsType = {
-    selected: boolean,
+    selected: boolean
+    callback: (ratingValue: RatingValueType) => void
+    value: RatingValueType
 }
 
 export function Star(props: StarPropsType) {
-    if (props.selected) {
-        return <span><b>Star</b> </span>
+    const onClickHandler = () => {
+        props.callback(props.value);
     }
     return (
-        <span>Star </span>
-    );
+        <span onClick={onClickHandler}>{props.selected ? <b>Star</b> : 'Star'} </span>
+    )
 }
 
