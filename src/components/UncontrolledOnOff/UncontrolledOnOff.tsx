@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 
-type UncontrolledOnOffPropsType = {
+type UncontrolledOnOffProps = {
     onChange: (switchOn: boolean) => void
+    defaultValueOn?: boolean
 }
 
-export const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
-    const [on, setOn] = useState(false);
+export const UncontrolledOnOff: React.FC<UncontrolledOnOffProps> = (props) => {
+    const {onChange, defaultValueOn} = props;
+    const [on, setOn] = useState(defaultValueOn ? defaultValueOn : false);
 
     const onStyle = {
         width: '30px',
@@ -35,7 +37,7 @@ export const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
     }
     const onClickHandler = (value: boolean) => {
         setOn(value);
-        props.onChange(value);
+        onChange(value);
     }
 
     return (
