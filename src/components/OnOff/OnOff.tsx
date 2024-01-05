@@ -1,18 +1,19 @@
 import React from 'react';
 
-type OnOffPropsType = {
+type OnOffProps = {
     on: boolean
     onClick: (on: boolean) => void
 }
 
-export const OnOff = (props: OnOffPropsType) => {
+export const OnOff: React.FC<OnOffProps> = (props) => {
+    const {on, onClick} = props;
     const onStyle = {
         width: '30px',
         height: '20px',
         border: '1px solid black',
         display: 'inline-block',
         padding: '2px',
-        backgroundColor: props.on ? 'green' : 'white'
+        backgroundColor: on ? 'green' : 'white'
     }
     const offStyle = {
         width: '30px',
@@ -21,7 +22,7 @@ export const OnOff = (props: OnOffPropsType) => {
         display: 'inline-block',
         marginLeft: '2px',
         padding: '2px',
-        backgroundColor: props.on ? 'white' : 'red'
+        backgroundColor: on ? 'white' : 'red'
     }
     const indicatorStyle = {
         width: '10px',
@@ -30,10 +31,10 @@ export const OnOff = (props: OnOffPropsType) => {
         border: '1px solid black',
         display: 'inline-block',
         marginLeft: '5px',
-        backgroundColor: props.on ? 'green' : 'red'
+        backgroundColor: on ? 'green' : 'red'
     }
     const onClickHandler = (value: boolean) => {
-        props.onClick(value);
+        onClick(value);
     }
     return (
         <div>

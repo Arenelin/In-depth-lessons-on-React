@@ -11,7 +11,7 @@ export default {
 type Story = StoryObj<typeof Accordion>;
 
 const onChangeCallback = () => {
-    console.log('hey hey')
+    console.log('hey hey');
 }
 export const FirstStory: Story = {
     args: {
@@ -29,17 +29,16 @@ export const SecondStory: Story = {
     }
 }
 
-const onChangeHandler = action('on change');
+const onChangeHandler = action('accordion mode change event fired');
 
 export const CollapsedAccordion = () => {
     return <Accordion titleValue={'Collapsed Accordion'} collapsed={true} onClick={onChangeHandler}/>
 }
 export const OpenedAccordion = () => {
-    return <Accordion titleValue={'Opened Accordion'} collapsed={false} onClick={() => {
-    }}/>
+    return <Accordion titleValue={'Opened Accordion'} collapsed={false} onClick={(onChangeHandler)}/>
 }
 export const AccordionDemo = () => {
     const [collapsed, setCollapsed] = useState(false);
 
-    return <Accordion titleValue={'Demo2 Accordion'} collapsed={collapsed} onClick={setCollapsed}/>
+    return <Accordion titleValue={'Demo Accordion'} collapsed={collapsed} onClick={setCollapsed}/>
 }
